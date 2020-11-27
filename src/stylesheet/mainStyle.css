@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+.mainComponent{
+    display: flex;
+}
+.leftSidebar{
+    flex: 0.25;
+    float: left;
+    border: 1px solid rgb(191, 212, 200);
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.leftSidebar_header{
+    flex: .15;
+    background: white;
+    
+    border: 1px solid  rgb(191, 212, 200);
+}
+.leftSidebar_threads{
+    flex: .85;
+}
+
+
+.rightSidebar{
+    flex:0.75;
+    float: right;
+    border: 1px solid  rgb(191, 212, 200);
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.rightSidebar_header{
+    flex:0.09;
+}
+.rightSidebar_body{
+    border: 1px solid rgb(191, 212, 200);
+    background: rgb(237,247,255 );
+    flex:0.91;
+}
