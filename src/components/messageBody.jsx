@@ -7,10 +7,10 @@ class MessageBody extends Component{
             <div className="messageContainer">
                 <div className="messages">
 
-                        {this.props.userArr.msg.map( m => 
+                        {this.props.userArr.msg.map( roboMsg => 
                                     <div className="userMessages">
-                                        <p>{m}</p>
-                                        <img  src="https://picsum.photos/200/300/?blur=2" alt=""/>
+                                        <p>{roboMsg}</p>
+                                        <img  src={this.props.roboIcon} alt=""/>
                                     </div>
 
                         )}            
