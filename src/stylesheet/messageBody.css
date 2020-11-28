@@ -22,9 +22,10 @@
     justify-content: flex-end;
 }
 .userMessages p{
-    border: 1px solid red;
     border-radius: 15px 0px 15px 15px;
     padding: 15px;
+    background-color: rgba(183, 222, 53, 0.9);
+    box-shadow: 0 8px 6px -6px black;
 }
 
 
@@ -48,23 +49,35 @@
   }
 .inputFieldBottom{
     display: flex;
-    margin:10px;
+    flex-direction: row;
+    position: absolute;
+    bottom: 20px;
+    left: 30%;
     justify-content: space-evenly;
 }
-input[type=text]
+.inputFieldBottom input[type=text]
 {  flex:0.90;
    height: 40px; 
+   padding-left: 10px;
+   padding-right: 10px;
+   width: 65vw;
    line-height: 15px;
+   border: 1px solid;
    border-radius: 10px;  
    outline: none;
 }
 
-input[type=image]
+.inputFieldBottom input[type=image]
 {  width: 40px;
    border-radius: 999px;
    outline: none;
 }
-input[type=image]:hover
+
+.inputFieldBottom button:hover
 {  cursor: pointer; 
     transform: scale(1.1);
+}
+
+.inputFieldBottom button {
+    margin-top: -10px;
 }

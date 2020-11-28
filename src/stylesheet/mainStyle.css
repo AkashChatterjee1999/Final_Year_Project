@@ -42,4 +42,17 @@
     border: 1px solid rgb(191, 212, 200);
     background: rgb(237,247,255 );
     flex:0.91;
+    background-image: url('../img/background.png');
+    background-repeat: repeat;
+    background-position: center;
+    background-size: 6%;
+}
+
+.sendBtn {
+    border-radius: 40px;
+    border: 0px;
+}
+
+button:focus{
+    outline: 0;
 }

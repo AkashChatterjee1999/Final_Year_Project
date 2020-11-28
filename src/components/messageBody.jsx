@@ -10,14 +10,16 @@ class MessageBody extends Component{
                         {this.props.userArr.msg.map( m => 
                                     <div className="userMessages">
                                         <p>{m}</p>
-                                        <img src="https://picsum.photos/200/300/?blur=2" alt=""/>
+                                        <img  src="https://picsum.photos/200/300/?blur=2" alt=""/>
                                     </div>
 
                         )}            
                 </div>
                 <div className="inputFieldBottom">
                     <input type="text" placeholder="Type Your Messages Here..."/>
-                    <input type="image" name = "submit" alt="send" src={sendMsg}/>
+                    <button className = "sendBtn">
+                        <img className = "img-fluid" src = {sendMsg} />
+                    </button>
                 </div>
             </div>
         );
