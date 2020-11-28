@@ -49,7 +49,7 @@ class Main extends Component{
                     <div className="rightSidebar_header">
                     {
                         this.state.selectedId>0?
-                        <ChatHeader userName={this.state.userName} roboIcon = {this.state.userArr[this.state.selectedId-1].icon} userId={this.state.selectedId}/>
+                        <ChatHeader roboName={this.state.userName} roboIcon = {this.state.userArr[this.state.selectedId-1].icon} userId={this.state.selectedId} algo={this.state.userArr[this.state.selectedId-1].algo}/>
                         :null
                     }
                     </div>
