@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,600&display=swap');
+.userDetails{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid lightblue;
+    margin: 3px;
+    font-family: 'Montserrat', sans-serif;
+}
+.userDetails:hover{
+    cursor: pointer;
+    background:#7db1c1;
+    border-radius: 5px;
+}
+img{
+    margin: 5px;
+    width: 65px;
+    height: 65px;
+    border-radius: 999px;
+}
+h3{
+    flex:auto;
+    
+}
