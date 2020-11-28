@@ -6,10 +6,10 @@ class UserThreads extends Component{
     // }
     render(){
         return(
-            <div className="userDetails" onClick={ () => { this.props.handleUserName(this.props.userArr.id)} }  >
+            <div className="userDetails m-2 rounded pr-3" onClick={ () => { this.props.handleUserName(this.props.userArr.id)} }  >
                 <img src="https://picsum.photos/200/300/?blur=2" alt=""/>
-                <h3>{this.props.userArr.name    }</h3>
-                <h6>TimeStamp</h6>
+                <p className = "text mr-auto">{this.props.userArr.name}</p>
+                <small className = "text-muted">I use: {this.props.userArr.algo}</small>
             </div>
         );
     }

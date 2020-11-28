@@ -8,7 +8,6 @@
     align-items: center;
     justify-content: space-around;
     border: 1px solid lightblue;
-    margin: 3px;
     font-family: 'Montserrat', sans-serif;
 }
 .userDetails:hover{
