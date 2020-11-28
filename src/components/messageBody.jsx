@@ -18,7 +18,7 @@ class MessageBody extends Component{
                 <div className="inputFieldBottom">
                     <input type="text" placeholder="Type Your Messages Here..."/>
                     <button className = "sendBtn">
-                        <img className = "img-fluid" src = {sendMsg} />
+                        <img className = "img-fluid" src = {sendMsg} alt = "send"/>
                     </button>
                 </div>
             </div>
