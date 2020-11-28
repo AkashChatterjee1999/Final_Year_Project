@@ -7,15 +7,13 @@ class MessageBody extends Component{
             <div className="messageContainer">
                 <div className="messages">
 
-                        {this.props.userArr[this.props.userId].msg.map( m => 
+                        {this.props.userArr.msg.map( m => 
                                     <div className="userMessages">
                                         <p>{m}</p>
                                         <img src="https://picsum.photos/200/300/?blur=2" alt=""/>
                                     </div>
 
                         )}            
-
-
                 </div>
                 <div className="inputFieldBottom">
                     <input type="text" placeholder="Type Your Messages Here..."/>
