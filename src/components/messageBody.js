@@ -20,8 +20,8 @@ class MessageBody extends Component {
             msgContainer.scrollTo(0,msgContainer.scrollHeight);
     }
 
-    handleChange = event => {
-        this.setState({ sentMessage: event.target.value });
+    handleChange = (e) => {
+        this.setState({ sentMessage: e.target.value });
     }
 
     handleMessages = () => {
@@ -81,7 +81,7 @@ class MessageBody extends Component {
                     )}
                 </div>
                 <div className="inputFieldBottom">
-                    <input type="text" placeholder="Type Your Messages Here..." onChange={this.handleChange} value={this.state.sentMessage}/>
+                    <input type="text" placeholder="Type Your Messages Here..." onChange={this.handleChange} value={this.state.sentMessage} onKeyPress={(e) => { if(e.key==='Enter')this.handleMessages()} }/>
                     <button className="sendBtn" onClick={this.handleMessages} disabled={!this.state.sentBtnIsActive}>
                         <img className="img-fluid" src={sendMsg} alt="send" />
                     </button>
