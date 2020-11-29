@@ -25,7 +25,7 @@ class MessageBody extends Component {
     }
 
     handleMessages = () => {
-        const cur_host = "https://94079758a6ca.ngrok.io"
+        const cur_host = "https://be113081d0e3.ngrok.io"
         let userStr = this.state.sentMessage
         this.setState({ emojiLoading: true, sentMessage: "" , sentBtnIsActive: false },() => {
             this.props.sentMessages(this.props.userId,userStr);
@@ -66,7 +66,11 @@ class MessageBody extends Component {
                             {
                                 this.props.userArr.botMsg[idx] !== "---"?
                                     <div className="botMessages">
-                                        <p><span style={{ fontSize: 30 }} > {this.props.userArr.botMsg[idx]} </span></p>
+                                        <p>
+                                            <span style={{ fontSize: this.props.userArr.botMsg[idx].length<3?35:16 }}> 
+                                                {this.props.userArr.botMsg[idx]}
+                                            </span>
+                                        </p>
                                         <img style={{ background: "#000000" }} src={this.props.roboIcon} alt="reply Bot" />
                                     </div>
                                 :   <div className="botMessages">
