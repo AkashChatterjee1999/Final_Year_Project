@@ -1,7 +1,7 @@
 .messageContainer{
     display: flex;
     flex-direction: column;
-    
+    min-height: 80vh;
 }
 .messages{
     border: 1px solid  rgb(191, 212, 200);
@@ -10,8 +10,7 @@
     overflow-x: hidden;
     word-wrap: break-word;
     margin: 10px;
-    height:30rem;
-
+    height:76vh;
 }
 
 .userMessages {
@@ -42,11 +41,24 @@
     border: 1px solid red;
     border-radius: 0px 15px 15px 15px;
     padding: 15px;
+    background-color: #ff8e96;
+
+}
+
+.emojiLoader{
+    position: relative;
+    left: 1vw;
+    width: 110px;
+    height: 50px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .messages::-webkit-scrollbar {
     display: none;
-  }
+}
+
 .inputFieldBottom{
     display: flex;
     flex-direction: row;
