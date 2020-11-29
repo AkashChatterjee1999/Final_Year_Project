@@ -7,19 +7,24 @@ import robo1Face from '../img/robo1.jpeg'
 import robo2Face from '../img/robo2.jpg'
 import robo3Face from '../img/robo3.jpg'
 import robo4Face from '../img/robo4.jpg'
+
 import {Activity} from 'react-feather';
 class Main extends Component{
     constructor(props) {
         super(props)
         this.state = {
             userArr : [
-                {id:1,name:"Bot #1", algo: "LSTM",icon: robo1Face, msg:["This is a message from Bot #1","Hi Hello","Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio reiciendis praesentium ullam eum, ipsam et. Numquam voluptatibus sint minus accusantium, possimus ipsam beatae.","Dummy Texts"]},
+                {id:1,name:"Bot #1", algo: "LSTM",icon: robo1Face, userMsg:["This is a message from Bot #1","Hi Hello","Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio reiciendis praesentium ullam eum, ipsam et. Numquam voluptatibus sint minus accusantium, possimus ipsam beatae.","Dummy Texts"],
+                botMsg:[]},
     
-                {id:2,name:"Bot #2",algo: "RNN", icon: robo2Face, msg:["This is a message from Bot #2","Hi Hello","Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio reiciendis praesentium ullam eum, ipsam et. Numquam voluptatibus sint minus accusantium, possimus ipsam beatae.","Dummy Texts"]},
+                {id:2,name:"Bot #2",algo: "RNN", icon: robo2Face, userMsg:["This is a message from Bot #2","Hi Hello","Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio reiciendis praesentium ullam eum, ipsam et. Numquam voluptatibus sint minus accusantium, possimus ipsam beatae.","Dummy Texts"],
+                botMsg:[]},
     
-                {id:3,name:"Bot #3",algo: "RNN", icon:robo3Face, msg:["This is a message from Bot #3","Hi Hello","Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio reiciendis praesentium ullam eum, ipsam et. Numquam voluptatibus sint minus accusantium, possimus ipsam beatae.","Dummy Texts"]},
+                {id:3,name:"Bot #3",algo: "RNN", icon:robo3Face, userMsg:["This is a message from Bot #3","Hi Hello","Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio reiciendis praesentium ullam eum, ipsam et. Numquam voluptatibus sint minus accusantium, possimus ipsam beatae.","Dummy Texts"],
+                botMsg:[]},
     
-                {id:4,name:"Bot #4",algo: "CNN", icon:robo4Face, msg:["This is a message from Bot #4","Hi Hello","Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio reiciendis praesentium ullam eum, ipsam et. Numquam voluptatibus sint minus accusantium, possimus ipsam beatae.","Dummy Texts"]}
+                {id:4,name:"Bot #4",algo: "CNN", icon:robo4Face, userMsg:["This is a message from Bot #4","Hi Hello","Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio reiciendis praesentium ullam eum, ipsam et. Numquam voluptatibus sint minus accusantium, possimus ipsam beatae.","Dummy Texts"],
+                botMsg:[]}
             ],
             userName: "No Chat Selected",
             selectedId: 0
@@ -31,6 +36,24 @@ class Main extends Component{
         this.setState({userName:userObj[0].name}); 
         this.setState({selectedId:id});           
     }
+
+    handleSentMessages = (userId,receivedMsg) => {
+        //console.log(userId,receivedMsg);
+        let userArr = [...this.state.userArr];
+        userArr[userId-1].userMsg.push(receivedMsg);
+        this.setState({userArr});
+        console.log(this.state.userArr);
+    }
+
+    handleBotMessages = (userId,receivedMsg) => {
+        
+        let userArr = [...this.state.userArr];
+        userArr[userId-1].botMsg.push(receivedMsg);
+        this.setState({userArr});
+        console.log(userArr[userId-1].botMsg);
+        
+    }
+
     render(){
         return(
             <div className="mainComponent">
@@ -56,7 +79,7 @@ class Main extends Component{
                     {
                         this.state.selectedId>0?
                             <div className="rightSidebar_body">
-                                <MessageBody userArr={this.state.userArr[this.state.selectedId-1]} roboIcon = {this.state.userArr[this.state.selectedId-1].icon} userId={this.state.selectedId} />
+                                <MessageBody userArr={this.state.userArr[this.state.selectedId-1]} roboIcon = {this.state.userArr[this.state.selectedId-1].icon} userId={this.state.selectedId} sentMessages={this.handleSentMessages} botMessages={this.handleBotMessages}/>
                             </div>
                         :   <div className = "rightSidebar_body">
                                 <div className="messageContainer" style = {{marginTop: "40vh"}}>
