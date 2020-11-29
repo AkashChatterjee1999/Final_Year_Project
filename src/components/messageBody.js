@@ -7,23 +7,25 @@ import replyBot from '../img/replyBot.png'
 
 class MessageBody extends Component {
 
+    state = {
+        sentMessage: '',
+        botResponse: '',
+        emojiLoading: false,
+       
+    }
     componentDidUpdate = () => {
         const msgContainer = document.getElementById('messages');
         if(msgContainer)
             msgContainer.scrollTo(0,msgContainer.scrollHeight);
     }
 
-    state = {
-        sentMessage: '',
-        botResponse: '',
-        emojiLoading: false
-    }
     handleChange = event => {
         this.setState({ sentMessage: event.target.value });
     }
 
     handleMessages = () => {
         this.setState({ emojiLoading: true });
+       
         this.props.sentMessages(
             this.props.userId,
             this.state.sentMessage
@@ -37,6 +39,8 @@ class MessageBody extends Component {
                     this.state.botResponse
                 );
                 this.setState({ emojiLoading: false })
+                
+
             })
             .catch(error => {
                 console.log(error);
@@ -47,6 +51,9 @@ class MessageBody extends Component {
         return (
             <div className="messageContainer">
                 <div id='messages' className="messages">
+                    <div className="emojiLoader">
+                        {this.state.emojiLoading && <ReactBootStrap.Spinner animation="grow" />}
+                    </div>
 
                     {this.props.userArr.userMsg.map(roboMsg =>
                         <div className="userMessages">
@@ -55,10 +62,6 @@ class MessageBody extends Component {
                         </div>
 
                     )}
-                    <div className="emojiLoader">
-                        loading...
-                        {this.state.emojiLoading && <ReactBootStrap.Spinner animation="grow" />}
-                    </div>
                     {this.props.userArr.botMsg.map(m =>
                         <div className="botMessages">
                             <p><span style={{ fontSize: 50 }} > {m} </span></p>

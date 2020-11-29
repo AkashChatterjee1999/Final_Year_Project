@@ -11,7 +11,6 @@
     word-wrap: break-word;
     margin: 10px;
     height:30rem;
-
 }
 
 .userMessages {
@@ -44,6 +43,11 @@
     padding: 15px;
     background-color: #ff8e96;
 
+}
+
+.emojiLoader{
+    position: fixed;
+    bottom: 70px;
 }
 
 .messages::-webkit-scrollbar {

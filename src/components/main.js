@@ -14,16 +14,16 @@ class Main extends Component{
         super(props)
         this.state = {
             userArr : [
-                {id:1,name:"Bot #1", algo: "LSTM",icon: robo1Face, userMsg:["This is a message from Bot #1","Hi Hello","Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio reiciendis praesentium ullam eum, ipsam et. Numquam voluptatibus sint minus accusantium, possimus ipsam beatae.","Dummy Texts"],
+                {id:1,name:"Bot #1", algo: "LSTM",icon: robo1Face, userMsg:[],
                 botMsg:[]},
     
-                {id:2,name:"Bot #2",algo: "RNN", icon: robo2Face, userMsg:["This is a message from Bot #2","Hi Hello","Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio reiciendis praesentium ullam eum, ipsam et. Numquam voluptatibus sint minus accusantium, possimus ipsam beatae.","Dummy Texts"],
+                {id:2,name:"Bot #2",algo: "RNN", icon: robo2Face, userMsg:[],
                 botMsg:[]},
     
-                {id:3,name:"Bot #3",algo: "RNN", icon:robo3Face, userMsg:["This is a message from Bot #3","Hi Hello","Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio reiciendis praesentium ullam eum, ipsam et. Numquam voluptatibus sint minus accusantium, possimus ipsam beatae.","Dummy Texts"],
+                {id:3,name:"Bot #3",algo: "RNN", icon:robo3Face, userMsg:[],
                 botMsg:[]},
     
-                {id:4,name:"Bot #4",algo: "CNN", icon:robo4Face, userMsg:["This is a message from Bot #4","Hi Hello","Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio reiciendis praesentium ullam eum, ipsam et. Numquam voluptatibus sint minus accusantium, possimus ipsam beatae.","Dummy Texts"],
+                {id:4,name:"Bot #4",algo: "CNN", icon:robo4Face, userMsg:[],
                 botMsg:[]}
             ],
             userName: "No Chat Selected",
