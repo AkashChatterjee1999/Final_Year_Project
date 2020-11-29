@@ -46,8 +46,8 @@ class MessageBody extends Component {
     
             }).catch(err => {
                 console.error(err)
-                this.setState({emojiLoading: false, sentBtnIsActive: true, botResponse: "I don't know to respond to that"},() => {
-                    this.props.replaceBlankWithBotReply("I don't know to respond to that",this.props.userId)
+                this.setState({emojiLoading: false, sentBtnIsActive: true, botResponse: "I don't know how to respond to that"},() => {
+                    this.props.replaceBlankWithBotReply("I don't know how to respond to that",this.props.userId)
                 })
             })
         } else {
