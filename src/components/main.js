@@ -60,7 +60,7 @@ class Main extends Component{
                             </div>
                         :   <div className = "rightSidebar_body">
                                 <div className="messageContainer" style = {{marginTop: "40vh"}}>
-                                    <center><h2>Select a chat to start</h2></center>
+                                    <center><h2>Select a bot to start</h2></center>
                                 </div>
                             </div>
                     }
