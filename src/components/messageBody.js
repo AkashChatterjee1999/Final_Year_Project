@@ -25,30 +25,34 @@ class MessageBody extends Component {
     }
 
     handleMessages = () => {
-        const cur_host = "https://be113081d0e3.ngrok.io"
-        let userStr = this.state.sentMessage
-        this.setState({ emojiLoading: true, sentMessage: "" , sentBtnIsActive: false },() => {
-            this.props.sentMessages(this.props.userId,userStr);
-            this.props.botMessages(this.props.userId,"---");
-        });
-        axios.post(cur_host+"/api/v1.0/lstm/predMoji",{
-            "query" : userStr
-        },{
-            headers: {
-                'content-type': 'text/plain;charset=utf-8'
-            }
-        }).then(res => {
-            let emoji = res.data.emojis
-            this.setState({emojiLoading: false, sentBtnIsActive: true, botResponse: emoji},() => {
-                this.props.replaceBlankWithBotReply(emoji,this.props.userId)
+        if(this.state.sentMessage.length>1){
+            const cur_host = "https://be113081d0e3.ngrok.io"
+            let userStr = this.state.sentMessage
+            this.setState({ emojiLoading: true, sentMessage: "" , sentBtnIsActive: false },() => {
+                this.props.sentMessages(this.props.userId,userStr);
+                this.props.botMessages(this.props.userId,"---");
+            });
+            axios.post(cur_host+"/api/v1.0/lstm/predMoji",{
+                "query" : userStr
+            },{
+                headers: {
+                    'content-type': 'text/plain;charset=utf-8'
+                }
+            }).then(res => {
+                let emoji = res.data.emojis
+                this.setState({emojiLoading: false, sentBtnIsActive: true, botResponse: emoji},() => {
+                    this.props.replaceBlankWithBotReply(emoji,this.props.userId)
+                })
+    
+            }).catch(err => {
+                console.error(err)
+                this.setState({emojiLoading: false, sentBtnIsActive: true, botResponse: "I don't know to respond to that"},() => {
+                    this.props.replaceBlankWithBotReply("I don't know to respond to that",this.props.userId)
+                })
             })
-
-        }).catch(err => {
-            console.error(err)
-            this.setState({emojiLoading: false, sentBtnIsActive: true, botResponse: "I don't know to respond to that"},() => {
-                this.props.replaceBlankWithBotReply("I don't know to respond to that",this.props.userId)
-            })
-        })
+        } else {
+            console.log("Provide arguments to start")
+        }
     }
 
     render() {
