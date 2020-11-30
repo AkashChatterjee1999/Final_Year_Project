@@ -26,7 +26,7 @@ class MessageBody extends Component {
 
     handleMessages = () => {
         if(this.state.sentMessage.length>1){
-            const cur_host = "https://be113081d0e3.ngrok.io"
+            const cur_host = "https://48039358e12d.ngrok.io"
             let userStr = this.state.sentMessage
             this.setState({ emojiLoading: true, sentMessage: "" , sentBtnIsActive: false },() => {
                 this.props.sentMessages(this.props.userId,userStr);
