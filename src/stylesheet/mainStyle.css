@@ -5,6 +5,7 @@
 }
 .mainComponent{
     display: flex;
+    flex-direction: row;
 }
 .leftSidebar{
     flex: 0.25;
