@@ -26,7 +26,7 @@ class MessageBody extends Component {
 
     handleMessages = () => {
         if(this.state.sentMessage.length>1){
-            const cur_host = "https://956f20be1112.ngrok.io"
+            const cur_host = "https://6b8b9b885881.ngrok.io"
             let userStr = this.state.sentMessage
             this.setState({ emojiLoading: true, sentMessage: "" , sentBtnIsActive: false },() => {
                 this.props.sentMessages(this.props.userId,userStr);
@@ -50,7 +50,6 @@ class MessageBody extends Component {
                     this.props.replaceBlankWithBotReply("I don't know how to respond to that",this.props.userId)
                 })
             })
-
             console.log("Provide arguments to start")
         }
     }
